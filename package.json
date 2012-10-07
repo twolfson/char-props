@@ -1,8 +1,8 @@
 {
-  "name": "charProps",
+  "name": "char-props",
   "description": "Retrieve line and column of a character at a given index.",
   "version": "0.1.0",
-  "homepage": "https://github.com/twolfson/charProps",
+  "homepage": "https://github.com/twolfson/char-props",
   "author": {
     "name": "Todd Wolfson",
     "email": "todd@twolfson.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/twolfson/charProps.git"
+    "url": "git://github.com/twolfson/char-props.git"
   },
   "bugs": {
-    "url": "https://github.com/twolfson/charProps/issues"
+    "url": "https://github.com/twolfson/char-props/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/twolfson/charProps/blob/master/LICENSE-MIT"
+      "url": "https://github.com/twolfson/char-props/blob/master/LICENSE-MIT"
     }
   ],
   "main": "lib/charProps",
