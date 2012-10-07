@@ -26,10 +26,11 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "vows test"
   },
   "devDependencies": {
-    "grunt": "~0.3.12"
+    "grunt": "~0.3.12",
+    "vows": "~0.6.4"
   },
   "keywords": []
 }

@@ -1,34 +1,21 @@
-var charProps = require('../lib/charProps.js');
+var vows = require('vows'),
+    charProps = require('../lib/charProps.js'),
+    suite = vows.describe('charProps');
 
-/*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
-
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
-
-exports['awesome'] = {
-  setUp: function(done) {
-    // setup here
-    done();
-  },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(charProps.awesome(), 'awesome', 'should be awesome.');
-    test.done();
+// Basic tests
+suite.addBatch({
+  'A new Indexer': {
+    'can find the line of a character at a given index': '',
+    'can find the column of a character at a given index': ''
   }
-};
+});
+
+// Intermediate tests
+suite.addBatch({
+  'A new Indexer': {
+    'can find the line of a character at a given index using a minimum line': ''
+  }
+});
+
+// Export the suite
+suite['export'](module);
