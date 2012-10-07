@@ -49,7 +49,22 @@ suite.addBatch({
 // Intermediate tests
 suite.addBatch({
   'A new Indexer': {
-    'can find the line of a character at a given index using a minimum line': ''
+    topic: function () {
+      return charProps(file);
+    },
+    'can find the line of a character at a given index using a minimum line': function (indexer) {
+      var index = 43, // o in 'fourrrr'
+          char = file.charAt(index);
+
+      // Sanity check
+      assert.strictEqual(char, 'o', 'The character we are the line of finding is "o"');
+
+      // Grab the line number of char
+      var line = indexer.lineAt(index, {'minLine': 3});
+
+      // Assert it is in the fourth line
+      assert.strictEqual(line, 3, 'The character at index 42 is on the fourth line');
+    }
   }
 });
 
