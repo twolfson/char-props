@@ -34,6 +34,24 @@ Install the module with: `npm install charProps`
  * @param {Number} index Index of character to retrieve column of
  * @returns {Number} Column number of character
  */
+
+// Indexer.indexAt JSDoc
+/**
+ * Get the index of the character at a line and column
+ * @param {Object} params Object containing line and column
+ * @param {Number} params.line Line of character
+ * @param {Number} params.column Column of character
+ * @returns {Number} Index of character
+ */
+
+// Indexer.charAt JSDoc
+/**
+ * Get the character at a line and column
+ * @param {Object} params Object containing line and column
+ * @param {Number} params.line Line of character
+ * @param {Number} params.column Column of character
+ * @returns {String} Character at specified location
+ */
 ```
 
 ## Examples
@@ -42,7 +60,7 @@ _(Coming soon)_
 For now, please refer to [tests](/blob/master/test/charProps_test.js).
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using vows.
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint your code via [grunt](http://gruntjs.com/) and test via [vows](http://vowsjs.org/).
 
 ## License
 Copyright (c) 2012 Todd Wolfson
