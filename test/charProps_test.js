@@ -42,6 +42,17 @@ suite.addBatch({
 
       // Assert it is in the eigth column
       assert.strictEqual(col, 8, 'The character at index 35 is in the ninth column');
+    },
+    'can find the index of a character at a given column and line': function (indexer) {
+      var location = {
+            'line': 2,
+            'column': 8
+          };
+
+      // Grab the index of our locaiton
+      var index = indexer.indexAt(location);
+
+      assert.strictEqual(index, 35, 'The character at line 2 and column 8 is index 35');
     }
   }
 });
@@ -64,6 +75,17 @@ suite.addBatch({
 
       // Assert it is in the fourth line
       assert.strictEqual(line, 3, 'The character at index 42 is on the fourth line');
+    },
+    'can get the character at a given column and line': 'TODO' || function (indexer) {
+      var location = {
+            'line': 3,
+            'column': 6
+          };
+
+      // Grab the character at our locaiton
+      var char = indexer.charAt(location);
+
+      assert.strictEqual(char, 'o', 'The character at line 3 and column 6 is "o"');
     }
   }
 });
