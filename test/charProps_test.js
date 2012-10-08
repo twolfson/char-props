@@ -76,7 +76,7 @@ suite.addBatch({
       // Assert it is in the fourth line
       assert.strictEqual(line, 3, 'The character at index 42 is on the fourth line');
     },
-    'can get the character at a given column and line': 'TODO' || function (indexer) {
+    'can get the character at a given column and line': function (indexer) {
       var location = {
             'line': 3,
             'column': 6
