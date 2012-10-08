@@ -1,7 +1,7 @@
 {
   "name": "char-props",
-  "description": "Retrieve line and column of a character at a given index.",
-  "version": "0.1.1",
+  "description": "Utility for looking up line and column of a character at a given index and vice versa",
+  "version": "0.1.2",
   "homepage": "https://github.com/twolfson/char-props",
   "author": {
     "name": "Todd Wolfson",
@@ -32,5 +32,12 @@
     "grunt": "~0.3.12",
     "vows": "~0.6.4"
   },
-  "keywords": []
+  "keywords": [
+    "character",
+    "lookup",
+    "line",
+    "row",
+    "column",
+    "index"
+  ]
 }

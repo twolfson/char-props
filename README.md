@@ -1,6 +1,6 @@
 # char-props
 
-Retrieve line and column of a character at a given index.
+Utility for looking up line and column of a character at a given index and vice versa.
 
 ## Getting Started
 Install the module with: `npm install charProps`
