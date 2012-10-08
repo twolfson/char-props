@@ -55,9 +55,44 @@ Install the module with: `npm install charProps`
 ```
 
 ## Examples
-_(Coming soon)_
+### Initial load
+```js
+var charProps = require('char-props'),
+    jquerySrc = fs.readFileSync('jquery.js', 'utf8');
 
-For now, please refer to [tests](/blob/master/test/charProps_test.js).
+// Load jQuery into charProps
+var jqueryProps = charProps(jquerySrc);
+```
+
+### lineAt usage
+```js
+// Look up line of character at index 42
+jqueryProps.lineAt(42);
+```
+
+### columnAt usage
+```js
+// Look up column of character at index 88
+jqueryProps.columnAt(88);
+```
+
+### indexAt usage
+```js
+// Look up the index of a character at line 9000, column 1
+jqueryProps.indexAt({'line': 9000, 'column': 1});
+```
+
+### charAt usage
+```js
+// Get the character at line 20, column 20
+jqueryProps.charAt({'line': 20, 'column': 20});
+```
+
+## lineAt advanced usage
+```js
+// Look up line of character at index 9001 with a minimum line of 99
+jqueryProps.lineAt(9001, {'minLine': 99});
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint your code via [grunt](http://gruntjs.com/) and test via [vows](http://vowsjs.org/).
