@@ -13,46 +13,61 @@ var file = [
 
 // Basic tests
 suite.addBatch({
-  'A new Indexer': {
+  'The character at index 20 (d in "second")': {
     topic: function () {
-      return charProps(file);
+      return 20;
     },
-    'can find the line of a character at a given index': function (indexer) {
-      var index = 20, // d in 'second'
-          char = file.charAt(index);
-
-      // Sanity check
-      assert.strictEqual(char, 'd', 'The character we are the line of finding is "d"');
-
-      // Grab the line number of char
-      var line = indexer.lineAt(index);
-
-      // Assert the 'second' is on the second line
-      assert.strictEqual(line, 1, 'The character at index 20 is on the second line');
+    'is a "d"': function (index) {
+      var char = file.charAt(index);
+      assert.strictEqual(char, 'd');
     },
-    'can find the column of a character at a given index': function (indexer) {
-      var index = 35, // ! in 'line!'
-          char = file.charAt(index);
-
-      // Sanity check
-      assert.strictEqual(char, '!', 'The character we are the column of finding is "!"');
-
-      // Grab the column number of char
-      var col = indexer.columnAt(index);
-
-      // Assert it is in the eigth column
-      assert.strictEqual(col, 8, 'The character at index 35 is in the ninth column');
+    'processed via charProps.lineAt': {
+      topic: function (index) {
+        var fileProps = charProps(file),
+            retVal = fileProps.lineAt(index);
+        return retVal;
+      },
+      'is on the second line': function (line) {
+        assert.strictEqual(line, 1);
+      }
+    }
+  },
+  'The character at index 35 (! in "line!")': {
+    topic: function () {
+      return 35;
     },
-    'can find the index of a character at a given column and line': function (indexer) {
+    'is a "!"': function (index) {
+      var char = file.charAt(index);
+      assert.strictEqual(char, '!');
+    },
+    'processed via charProps.columnAt': {
+      topic: function (index) {
+        var fileProps = charProps(file),
+            retVal = fileProps.columnAt(index);
+        return retVal;
+      },
+      'is in the ninth column': function (line) {
+        assert.strictEqual(line, 8);
+      }
+    }
+  },
+  'The character on line 2, column 8': {
+    topic: function () {
       var location = {
             'line': 2,
             'column': 8
           };
-
-      // Grab the index of our locaiton
-      var index = indexer.indexAt(location);
-
-      assert.strictEqual(index, 35, 'The character at line 2 and column 8 is index 35');
+      return location;
+    },
+    'processed via charProps.indexAt': {
+      topic: function (location) {
+        var fileProps = charProps(file),
+            retVal = fileProps.indexAt(location);
+        return retVal;
+      },
+      'is index 35': function (index) {
+        assert.strictEqual(index, 35);
+      }
     }
   }
 });
