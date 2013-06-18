@@ -1,4 +1,4 @@
-# char-props
+# char-props [![Donate on Gittip](http://badgr.co/gittip/twolfson.png)](https://www.gittip.com/twolfson/)
 
 Utility for looking up line and column of a character at a given index and vice versa.
 
